@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 1100px;
+				height: 500px;
+				border: 1px solid #000;
+				position: relative;
+			}
+			#box1{
+				height: 100px;
+				width: 100px;
+				border-radius: 50%;
+				left: 0px;
+				top: 200px;
+				position: absolute;
+				background:red;
+				
+				
+			}
+			#box2{
+				width:100px;
+				height: 100px;
+				border-radius: 50%;
+				top: 200px;
+				left: 500px;
+				position: absolute;
+				background: green;
+			}
+			
+			
+		</style>
+		<script src="js/tween.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box1"></div>
+			<div id="box2"></div>
+		</div>
+		<script>
+			var box=document.getElementById("box");
+			var box1=document.getElementById("box1");
+			var box2=document.getElementById("box2");
+			f1();
+		     function f1(){
+		     var t=0;
+		     var b=0;
+		     var c=400;
+		     var d=100;
+		     var timer=setInterval(run,10);
+		     function run(){
+		     	t++;
+		     	box1.style.left=Tween.Linear(t,b,c,d)+"px";
+		     	if(t>=d){
+		     		clearInterval(timer);
+		     		f2();
+		     	}
+		     }
+			}
+		 function f2(){
+		     var t1=0;
+		     var b1=500;
+		     var c1=500;
+		     var d1=100;
+		     var timer1=setInterval(run1,10);
+		     function run1(){
+		     	t1++;
+		     	box2.style.left=Tween.Linear(t1,b1,c1,d1)+"px";
+		     	if(t1>=d1){
+		     		clearInterval(timer1);
+		     		f3();
+		     	}
+		     }
+			}
+		 function f3(){
+		 	var t1=0;
+		 	var b1=1000;
+		 	var c1=-500;
+		 	var d1=100;
+		 	var timer1=setInterval(run2,10);
+		 	function run2(){
+		 		t1++;
+		 		box2.style.left=Tween.Linear(t1,b1,c1,d1,)+"px";
+		 		if(t1>=d1){
+		 			clearInterval(timer1);
+		 			f4();
+		 		}
+		 	}
+		 }
+			 function f4(){
+		     var t2=0;
+		     var b2=400;
+		     var c2=-400;
+		     var d2=100;
+		     var timer1=setInterval(run2,10);
+		     function run2(){
+		     	t2++;
+		     	box1.style.left=Tween.Linear(t2,b2,c2,d2)+"px";
+		     	if(t2>=d2){
+		     		clearInterval(timer1);
+		     		f1();
+		     	}
+		     }
+			}
+		 
+		 
+		 
+		</script>
+	</body>
+</html>
